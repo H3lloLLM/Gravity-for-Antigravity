@@ -47,12 +47,19 @@ def load_tasks(args):
     return tasks
 
 def run_subagent(task, i, args):
-    task_id = f"task_{i}"
+    task_id = task.get("id", f"task_{i}")
     run_dir = os.path.join(args.output_dir, task_id)
     os.makedirs(run_dir, exist_ok=True)
     
+    # Resolve task file or create from prompt
+    task_file = task.get("file")
+    if not task_file and "prompt" in task:
+        task_file = os.path.join(run_dir, "task.md")
+        with open(task_file, "w") as f:
+            f.write(task["prompt"])
+            
     out_json = os.path.join(run_dir, "output.json")
-    cmd = ["bash", "scripts/subagent.sh", task["model"], task["file"], out_json]
+    cmd = ["bash", "scripts/subagent.sh", task["model"], task_file, out_json]
     
     env = os.environ.copy()
     if args.dry_run:
@@ -75,7 +82,7 @@ def run_subagent(task, i, args):
     return {
         "task_id": task_id,
         "model": task["model"],
-        "file": task["file"],
+        "file": task_file,
         "status": status,
         "duration": duration,
         "exit_code": result.returncode,
@@ -100,16 +107,19 @@ def main():
     failure_count = 0
     
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.concurrency) as executor:
-        futures = [executor.submit(run_subagent, task, i, args) for i, task in enumerate(tasks)]
+        futures = {executor.submit(run_subagent, task, i, args): i for i, task in enumerate(tasks)}
+        indexed_results = []
         for future in concurrent.futures.as_completed(futures):
+            idx = futures[future]
             res = future.result()
-            results.append(res)
+            indexed_results.append((idx, res))
             if res["status"] == "SUCCESS":
                 success_count += 1
             else:
                 failure_count += 1
                 
-    results.sort(key=lambda x: int(x["task_id"].split("_")[1]))
+    indexed_results.sort(key=lambda x: x[0])
+    results = [r[1] for r in indexed_results]
     
     report_data = {
         "summary": {

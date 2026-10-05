@@ -25,9 +25,20 @@ fi
 
 MODEL_OR_ROLE="$1"
 TASK_FILE="$2"
-OUTPUT_FILE="$3"
-shift 3 || true
-EXTRA_FLAGS=("$@")
+OUTPUT_FILE=""
+EXTRA_FLAGS=()
+
+if [[ $# -ge 3 ]]; then
+    # If 3rd arg starts with --, it's an extra flag, not output file
+    if [[ "$3" == --* ]]; then
+        shift 2
+        EXTRA_FLAGS=("$@")
+    else
+        OUTPUT_FILE="$3"
+        shift 3 || true
+        EXTRA_FLAGS=("$@")
+    fi
+fi
 
 # Resolve role to model slug
 MODEL="$MODEL_OR_ROLE"
