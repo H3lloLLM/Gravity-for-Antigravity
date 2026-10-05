@@ -11,8 +11,8 @@ updated: 2026-10-06T00:19:00Z
 
 ## Must-Haves (from SPEC)
 
-- [ ] Headless Subagent CLI runner (`subagent.sh`) supporting model pinning, task files, and JSON envelopes
-- [ ] Concurrent batch runner for parallel multi-model subagent dispatch
+- [x] Headless Subagent CLI runner (`subagent.sh`) supporting model pinning, task files, and JSON envelopes
+- [x] Concurrent batch runner for parallel multi-model subagent dispatch
 - [ ] Pi Harness subagent role suite (`pi-scout`, `pi-planner`, `pi-builder`, `pi-reviewer`, `pi-debugger`, `pi-investigator`)
 - [ ] Subagent model routing matrix & capability configuration
 - [ ] Automated validation passing with 0 errors via `validate-agents.sh`
@@ -22,13 +22,13 @@ updated: 2026-10-06T00:19:00Z
 ## Phases
 
 ### Phase 1: Headless Subagent CLI Runner
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 **Objective:** Implement the core CLI wrapper scripts (`subagent.sh` and parallel batch runner `scripts/parallel-subagents.py` / `parallel-subagents.sh`) following the PDF architecture (headless `agy` invocation, `--model` pinning, `--output-format json`, timeout management, error propagation, temp file prompt passing).
 **Requirements:** REQ-01, REQ-02
 
 **Plans:**
-- [ ] Plan 1.1: Core `subagent.sh` runner and JSON envelope extractor
-- [ ] Plan 1.2: Parallel multi-subagent batch dispatcher with isolated output dirs
+- [x] Plan 1.1: Core `subagent.sh` runner and JSON envelope extractor
+- [x] Plan 1.2: Parallel multi-subagent batch dispatcher with isolated output dirs
 
 ---
 
@@ -71,7 +71,7 @@ updated: 2026-10-06T00:19:00Z
 
 | Phase | Status | Plans | Complete |
 |-------|--------|-------|----------|
-| 1 | ⬜ | 0/2 | — |
+| 1 | ✅ | 2/2 | 100% |
 | 2 | ⬜ | 0/2 | — |
 | 3 | ⬜ | 0/2 | — |
 | 4 | ⬜ | 0/1 | — |
