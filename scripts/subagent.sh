@@ -7,19 +7,20 @@ set -e
 MOCK_AGY="${MOCK_AGY:-0}"
 
 function show_help {
+    local exit_code="${1:-0}"
     echo "Usage: $0 <model-or-role> <task-file> [output-json-file] [extra-agy-flags...]"
     echo "Options:"
     echo "  --help  Show this help"
-    exit 0
+    exit "$exit_code"
 }
 
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
-    show_help
+    show_help 0
 fi
 
 if [[ $# -lt 2 ]]; then
     echo "Error: Missing arguments." >&2
-    show_help
+    show_help 1
 fi
 
 MODEL_OR_ROLE="$1"
@@ -60,7 +61,8 @@ if ! command -v agy >/dev/null 2>&1; then
 fi
 
 if [[ "$MOCK_AGY" == "1" ]]; then
-    RAW_JSON='{"status": "SUCCESS", "response": "Mock response for '$MODEL'", "model": "'$MODEL'", "duration_seconds": 0.1}'
+    MOCK_STATUS="${MOCK_STATUS:-SUCCESS}"
+    RAW_JSON='{"status": "'$MOCK_STATUS'", "response": "Mock response for '$MODEL'", "model": "'$MODEL'", "duration_seconds": 0.1}'
 else
     # Run actual agy command
     # Capture stderr as well, or just let agy handle it
