@@ -13,7 +13,7 @@ updated: 2026-10-06T00:19:00Z
 
 - [x] Headless Subagent CLI runner (`subagent.sh`) supporting model pinning, task files, and JSON envelopes
 - [x] Concurrent batch runner for parallel multi-model subagent dispatch
-- [ ] Pi Harness subagent role suite (`pi-scout`, `pi-planner`, `pi-builder`, `pi-reviewer`, `pi-debugger`, `pi-investigator`)
+- [x] Pi Harness subagent role suite (`pi-scout`, `pi-planner`, `pi-builder`, `pi-reviewer`, `pi-debugger`, `pi-investigator`)
 - [ ] Subagent model routing matrix & capability configuration
 - [ ] Automated validation passing with 0 errors via `validate-agents.sh`
 
@@ -33,14 +33,14 @@ updated: 2026-10-06T00:19:00Z
 ---
 
 ### Phase 2: Pi Harness Subagent Suite Definitions
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 **Objective:** Create the complete suite of specialized Pi harness subagents in `.agents/agents/` (`pi-scout.md`, `pi-planner.md`, `pi-builder.md`, `pi-reviewer.md`, `pi-debugger.md`, `pi-investigator.md`) with explicit YAML frontmatter, valid Antigravity tools, single-shot prompts, and invocation contracts.
 **Requirements:** REQ-03, REQ-04, REQ-05, REQ-06, REQ-07, REQ-08
 **Depends on:** Phase 1
 
 **Plans:**
-- [ ] Plan 2.1: Reconnaissance and Planning roles (`pi-scout.md`, `pi-planner.md`, `pi-investigator.md`)
-- [ ] Plan 2.2: Execution and Quality roles (`pi-builder.md`, `pi-reviewer.md`, `pi-debugger.md`)
+- [x] Plan 2.1: Reconnaissance and Planning roles (`pi-scout.md`, `pi-planner.md`, `pi-investigator.md`)
+- [x] Plan 2.2: Execution and Quality roles (`pi-builder.md`, `pi-reviewer.md`, `pi-debugger.md`)
 
 ---
 
@@ -72,7 +72,7 @@ updated: 2026-10-06T00:19:00Z
 | Phase | Status | Plans | Complete |
 |-------|--------|-------|----------|
 | 1 | ✅ | 2/2 | 100% |
-| 2 | ⬜ | 0/2 | — |
+| 2 | ✅ | 2/2 | 100% |
 | 3 | ⬜ | 0/2 | — |
 | 4 | ⬜ | 0/1 | — |
 
