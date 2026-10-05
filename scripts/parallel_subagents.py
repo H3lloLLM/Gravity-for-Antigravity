@@ -23,8 +23,22 @@ def parse_args():
     parser.add_argument("--dry-run", action="store_true", help="Pass dry-run down to subagents (mock mode)")
     return parser.parse_args()
 
+def get_role_mappings():
+    mappings = {}
+    if HAS_YAML and os.path.exists("model_capabilities.yaml"):
+        try:
+            with open("model_capabilities.yaml", "r") as f:
+                data = yaml.safe_load(f)
+                if data and "role_mappings" in data:
+                    mappings = data["role_mappings"]
+        except Exception:
+            pass
+    return mappings
+
 def load_tasks(args):
     tasks = []
+    role_mappings = get_role_mappings()
+
     if args.tasks:
         with open(args.tasks, 'r') as f:
             if args.tasks.endswith('.yaml') or args.tasks.endswith('.yml'):
@@ -35,6 +49,10 @@ def load_tasks(args):
             else:
                 data = json.load(f)
             for item in data:
+                if "model" in item and item["model"] in role_mappings:
+                    item["model"] = role_mappings[item["model"]]
+                if "role" in item and "model" not in item:
+                    item["model"] = role_mappings.get(item["role"], item["role"])
                 tasks.append(item)
     
     if args.task:
@@ -42,7 +60,8 @@ def load_tasks(args):
             if ":" not in t:
                 print(f"Error: Invalid --task format '{t}'. Expected <role-or-model>:<task-file>")
                 continue
-            model, file = t.split(":", 1)
+            model_or_role, file = t.split(":", 1)
+            model = role_mappings.get(model_or_role, model_or_role)
             tasks.append({"model": model, "file": file})
     return tasks
 
