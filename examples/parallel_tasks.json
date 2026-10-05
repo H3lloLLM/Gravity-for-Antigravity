@@ -1,0 +1,12 @@
+[
+  {
+    "id": "scout_task",
+    "role": "pi-scout",
+    "prompt": "List the main components of the codebase, focusing on the .gsd and .agents directories."
+  },
+  {
+    "id": "plan_task",
+    "role": "pi-planner",
+    "prompt": "Create a high-level roadmap for adding a new 'pi-tester' subagent."
+  }
+]
