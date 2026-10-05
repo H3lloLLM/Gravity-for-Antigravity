@@ -7,15 +7,16 @@ updated: 2026-10-06T00:19:00Z
 # Roadmap
 
 > **Current Phase:** 1 - Headless Subagent CLI Runner
-> **Status:** planning
+> **Status:** complete
+> **Progress:** 4/4 phases complete (100%)
 
 ## Must-Haves (from SPEC)
 
 - [x] Headless Subagent CLI runner (`subagent.sh`) supporting model pinning, task files, and JSON envelopes
 - [x] Concurrent batch runner for parallel multi-model subagent dispatch
 - [x] Pi Harness subagent role suite (`pi-scout`, `pi-planner`, `pi-builder`, `pi-reviewer`, `pi-debugger`, `pi-investigator`)
-- [ ] Subagent model routing matrix & capability configuration
-- [ ] Automated validation passing with 0 errors via `validate-agents.sh`
+- [x] Subagent model routing matrix & capability configuration
+- [x] Automated validation passing with 0 errors via `validate-agents.sh`
 
 ---
 
@@ -57,13 +58,13 @@ updated: 2026-10-06T00:19:00Z
 ---
 
 ### Phase 4: Integration, Documentation & Runbook
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 **Objective:** Document the usage patterns for both native `invoke_subagent` and headless CLI parallel fan-out with complete examples and operational runbooks.
 **Requirements:** REQ-11
 **Depends on:** Phase 3
 
 **Plans:**
-- [ ] Plan 4.1: Documentation, runbook, and example workflows
+- [x] Plan 4.1: Documentation, runbook, and example workflows
 
 ---
 
@@ -74,7 +75,7 @@ updated: 2026-10-06T00:19:00Z
 | 1 | ✅ | 2/2 | 100% |
 | 2 | ✅ | 2/2 | 100% |
 | 3 | ✅ | 2/2 | 100% |
-| 4 | ⬜ | 0/1 | — |
+| 4 | ✅ | 1/1 | 100% |
 
 ---
 
