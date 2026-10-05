@@ -11,8 +11,8 @@
 | REQ-06 | Subagent role `pi-reviewer` for quality, diff inspection, and empirical validation | SPEC Goal 2 | Complete |
 | REQ-07 | Subagent role `pi-debugger` for hypothesis-driven bug tracing and isolated reproduction | SPEC Goal 2 | Complete |
 | REQ-08 | Subagent role `pi-investigator` for deep issue root cause analysis, logging, and research | SPEC Goal 2 | Complete |
-| REQ-09 | Model capability routing configuration linking Pi roles to model slugs/tiers | SPEC Goal 3 | Pending |
-| REQ-10 | Automated validation script test passing all agent definitions with 0 errors | SPEC Goal 4 | Pending |
+| REQ-09 | Model capability routing configuration linking Pi roles to model slugs/tiers | SPEC Goal 3 | Complete |
+| REQ-10 | Automated validation script test passing all agent definitions with 0 errors | SPEC Goal 4 | Complete |
 | REQ-11 | Orchestrator documentation & usage runbook demonstrating invocation and parallel fan-out | SPEC Goal 4 | Pending |
 
 ---

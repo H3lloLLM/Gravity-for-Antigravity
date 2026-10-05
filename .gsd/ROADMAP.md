@@ -45,14 +45,14 @@ updated: 2026-10-06T00:19:00Z
 ---
 
 ### Phase 3: Model Routing Configuration & Validation Suite
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 **Objective:** Update `model_capabilities.yaml` and create role routing maps linking each Pi subagent to model tiers/slugs. Verify all subagents with `validate-agents.sh` and validate script functionality.
 **Requirements:** REQ-09, REQ-10
 **Depends on:** Phase 2
 
 **Plans:**
-- [ ] Plan 3.1: Model capability mappings & configuration for Pi harness agents
-- [ ] Plan 3.2: Automated agent validation and execution tests
+- [x] Plan 3.1: Model capability mappings & configuration for Pi harness agents
+- [x] Plan 3.2: Automated agent validation and execution tests
 
 ---
 
@@ -73,7 +73,7 @@ updated: 2026-10-06T00:19:00Z
 |-------|--------|-------|----------|
 | 1 | ✅ | 2/2 | 100% |
 | 2 | ✅ | 2/2 | 100% |
-| 3 | ⬜ | 0/2 | — |
+| 3 | ✅ | 2/2 | 100% |
 | 4 | ⬜ | 0/1 | — |
 
 ---
