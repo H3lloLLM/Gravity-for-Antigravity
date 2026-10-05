@@ -8,20 +8,18 @@ updated: 2026-10-06T00:19:00Z
 
 **Milestone:** v1.0 - Subagent Orchestration & Pi Harness Agents
 **Phase:** 3 - Model Routing Configuration & Validation Suite
-**Status:** ready-to-execute
-**Plan:** Plans 3.1 and 3.2 created
+**Status:** Phase 3 executed, automated validation passed
 
 ## Last Action
 
-Phase 3 planning completed by `gsd-planner`:
-- Created `.gsd/phases/3/1-PLAN.md` (Model Capability Routing Configuration)
-- Created `.gsd/phases/3/2-PLAN.md` (Automated Validation & Execution Test Suite)
-- Created implementation plan artifact `phase_3_implementation_plan.md`
+Phase 3 execution completed:
+- Validated all 6 Pi Harness roles in `validate-agents.sh`.
+- Created and executed `tests/test_agent_validation.sh` successfully.
 
 ## Next Steps
 
-1. Execute Phase 3 via `/execute 3`
-2. Run automated validation suite `tests/test_agent_validation.sh`
+1. Verify Phase 3 via `/verify 3`
+2. Proceed to next milestone or phase
 
 ## Active Decisions
 
@@ -46,3 +44,22 @@ None
 Project initialized with /new-project flow. Architecture addresses:
 - The PDF method: Headless `agy` CLI subagent with `--model <slug>`, `--output-format json`, `--print-timeout`, and temp task files.
 - Pi Harness subagents: `pi-scout`, `pi-planner`, `pi-builder`, `pi-reviewer`, `pi-debugger`, `pi-investigator`.
+
+## Wave 2 Summary
+
+**Objective:** Create an automated test suite to validate all agent definitions and verify mock execution.
+
+**Changes:**
+- Created `tests/test_agent_validation.sh`
+
+**Files Touched:**
+- `tests/test_agent_validation.sh`
+
+**Verification:**
+- `bash tests/test_agent_validation.sh`: Exited with code 0. All 11 agents valid, mock execution successful for all 6 Pi roles.
+
+**Risks/Debt:**
+- None. Mocking behaves as expected.
+
+**Next Wave TODO:**
+- Phase 3 Verification.
