@@ -8,6 +8,34 @@ if ! bash scripts/validate-agents.sh; then
 fi
 echo "Agent validation passed."
 
+echo "Verifying Pi agent YAML sidecar model slugs..."
+EXPECTED_MODELS=(
+    "pi-scout:gemini-3.8-flash-low"
+    "pi-planner:gemini-3.8-flash-high"
+    "pi-builder:gemini-3.8-flash-low"
+    "pi-reviewer:gemini-3.8-flash-medium"
+    "pi-debugger:gemini-3.8-flash-medium"
+    "pi-investigator:gemini-3.8-flash-medium"
+)
+
+for pair in "${EXPECTED_MODELS[@]}"; do
+    role="${pair%%:*}"
+    expected_slug="${pair##*:}"
+    sidecar=".agents/agents/${role}.yaml"
+
+    if [ ! -f "$sidecar" ]; then
+        echo "Error: Sidecar file '$sidecar' does not exist."
+        exit 1
+    fi
+
+    if ! grep -qE "^model:[[:space:]]*${expected_slug}[[:space:]]*$" "$sidecar"; then
+        echo "Error: $sidecar does not contain expected model slug '$expected_slug'"
+        exit 1
+    fi
+    echo "Sidecar $role matches expected slug: $expected_slug"
+done
+echo "All YAML sidecars verified."
+
 echo "Testing subagent.sh mock execution..."
 
 # Create a dummy task file

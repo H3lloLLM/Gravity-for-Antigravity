@@ -6,6 +6,7 @@ tools:
   - run_command
   - send_message
 subagent: true
+model: inherit
 ---
 
 # Pi Reviewer

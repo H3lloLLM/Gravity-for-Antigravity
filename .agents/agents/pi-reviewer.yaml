@@ -1,1 +1,2 @@
 # Sidecar configuration for pi-reviewer
+model: gemini-3.8-flash-medium

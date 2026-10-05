@@ -6,6 +6,7 @@ tools:
   - list_dir
   - send_message
 subagent: true
+model: pro
 ---
 
 # Pi Planner

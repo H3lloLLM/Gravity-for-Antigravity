@@ -7,6 +7,7 @@ tools:
   - grep_search
   - send_message
 subagent: true
+model: inherit
 ---
 
 # Pi Debugger

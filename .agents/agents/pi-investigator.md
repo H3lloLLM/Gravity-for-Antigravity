@@ -7,6 +7,7 @@ tools:
   - view_file
   - send_message
 subagent: true
+model: inherit
 ---
 
 # Pi Investigator

@@ -8,6 +8,7 @@ tools:
   - grep_search
   - send_message
 subagent: true
+model: flash
 ---
 
 # Pi Scout

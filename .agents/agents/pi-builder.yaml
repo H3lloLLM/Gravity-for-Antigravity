@@ -1,1 +1,2 @@
 # Sidecar configuration for pi-builder
+model: gemini-3.8-flash-low

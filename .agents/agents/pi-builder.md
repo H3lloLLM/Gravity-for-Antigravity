@@ -9,6 +9,7 @@ tools:
   - run_command
   - send_message
 subagent: true
+model: flash
 ---
 
 # Pi Builder
