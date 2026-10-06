@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Parallel Batch Dispatcher (`scripts/parallel_subagents.py` & `scripts/parallel-subagents.sh`)**: Multi-process worker pool dispatcher supporting concurrency limits (`--concurrency`), task manifest files, isolated run directories (`.gsd/runs/<timestamp>/<task_id>/`), and automated Markdown execution report generation.
 - **Verification Tests**: Comprehensive test scripts (`tests/test_subagent_sh.sh`, `tests/test_parallel_subagents.sh`) verifying single-task and concurrent headless runs.
 
-#### Phase 2: Pi Harness Subagent Suite Definitions
+#### Phase 2: Gravity for Antigravity Subagent Suite Definitions
 - **6 Pi Specialist Subagents** registered in `.agents/agents/` with single-shot prompts and granular tool grants:
   - `pi-scout`: Codebase reconnaissance and file structure discovery (`gemini-3.8-flash-low`).
   - `pi-planner`: Architectural step decomposition and dependency analysis (`gemini-3.8-flash-high`).
@@ -34,5 +34,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Operational Runbook (`docs/RUNBOOK.md`)**: Complete operating instructions for both native Antigravity `invoke_subagent` workflows and headless CLI parallel fan-out.
 - **Runnable Examples (`examples/`)**: Sample workflows including `workflow_headless.sh`, `parallel_tasks.json`, and generated `execution_report.md`.
 - **Cross-Platform Adapters (`adapters/`)**: Optional model-specific enhancements for Claude (`CLAUDE.md`), Gemini (`GEMINI.md`), and GPT/OSS (`GPT_OSS.md`).
-- **Global Plugin Deployment**: Deployed Pi Harness subagent definitions and skill modules directly into global Antigravity plugin storage (`~/.gemini/config/plugins/pi-harness/`).
+- **Global Plugin Deployment**: Deployed Gravity for Antigravity subagent definitions and skill modules directly into global Antigravity plugin storage (`~/.gemini/config/plugins/gravity-for-antigravity/`).
 - **Orchestrator-Only Discipline (`AGENTS.md`)**: Single Source of Truth rule enforcing strict delegation discipline for Antigravity orchestrators.

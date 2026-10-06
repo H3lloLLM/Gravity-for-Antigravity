@@ -1,6 +1,6 @@
-# Contributing to Pi Harness
+# Contributing to Gravity for Antigravity
 
-Thank you for helping build Pi Harness! We welcome contributions that improve multi-agent efficiency, enhance context hygiene, or add new specialist capabilities.
+Thank you for helping build Gravity for Antigravity! We welcome contributions that improve multi-agent efficiency, enhance context hygiene, or add new specialist capabilities.
 
 Please follow these guidelines to keep the codebase consistent, lean, and reliable.
 
@@ -8,7 +8,7 @@ Please follow these guidelines to keep the codebase consistent, lean, and reliab
 
 ## Code of Conduct & Core Philosophy
 
-Pi Harness follows the principles defined in [PROJECT_RULES.md](PROJECT_RULES.md) and [GSD-STYLE.md](GSD-STYLE.md):
+Gravity for Antigravity follows the principles defined in [PROJECT_RULES.md](PROJECT_RULES.md) and [GSD-STYLE.md](GSD-STYLE.md):
 - **Orchestrate, don't cogitate:** The orchestrator coordinates and synthesizes; subagents do the heavy lifting in disposable contexts.
 - **Empirical proof over trust:** Every change requires verifiable evidence before being marked complete.
 - **Strict context hygiene:** Avoid polluting parent conversations; always pass file paths instead of dumping contents.
@@ -52,7 +52,7 @@ To add a new subagent role:
 
 4. **Copy to local plugin cache (if testing locally):**
    ```bash
-   cp .agents/agents/<agent-name>.* ~/.gemini/config/plugins/pi-harness/agents/
+   cp .agents/agents/<agent-name>.* ~/.gemini/config/plugins/gravity-for-antigravity/agents/
    ```
 
 ---

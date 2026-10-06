@@ -1,10 +1,10 @@
 <div align="center">
 
-# Pi Harness — Multi-Agent Orchestration Suite for Antigravity
+# Gravity for Antigravity — Multi-Agent Orchestration Suite
 
 ### Stop doing everything yourself. Orchestrate.
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-00C853?style=flat-square)](https://github.com/earendil-works/pi)
+[![Version](https://img.shields.io/badge/version-v1.0.0-00C853?style=flat-square)](https://github.com/H3lloLLM/Gravity-for-Antigravity)
 [![License](https://img.shields.io/badge/license-MIT-2196F3?style=flat-square)](LICENSE)
 [![Based on GSD](https://img.shields.io/badge/based%20on-GSD-7B2D8E?style=flat-square)](https://github.com/toonight/get-shit-done-for-antigravity)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20Mac-FF6D00?style=flat-square)](#cross-platform-support)
@@ -12,7 +12,7 @@
 
 A plugin-based multi-agent orchestration system for Google Antigravity that routes every task to the right specialist subagent (Pi subagents), keeping the main AI context lean, fast, and razor-sharp.
 
-Based on [GSD for Antigravity](https://github.com/toonight/get-shit-done-for-antigravity) • Upstream reference: [Pi by earendil-works](https://github.com/earendil-works/pi)
+Based on [GSD for Antigravity](https://github.com/toonight/get-shit-done-for-antigravity) • Upstream reference: [Pi by earendil-works](https://github.com/H3lloLLM/Gravity-for-Antigravity)
 
 [Quick Start](#getting-started) • [How It Works](#how-it-works) • [Pi Subagents](#pi-subagents-catalog) • [Why It Works](#why-it-works) • [Documentation](#documentation) • [Philosophy](#philosophy)
 
@@ -24,8 +24,8 @@ Based on [GSD for Antigravity](https://github.com/toonight/get-shit-done-for-ant
 
 <table>
 <tr>
-<th width="50%">❌ Without Pi Harness (Monolithic Agent)</th>
-<th width="50%">✅ With Pi Harness (Specialist Orchestration)</th>
+<th width="50%">❌ Without Gravity for Antigravity (Monolithic Agent)</th>
+<th width="50%">✅ With Gravity for Antigravity (Specialist Orchestration)</th>
 </tr>
 <tr>
 <td valign="top">
@@ -53,7 +53,7 @@ Based on [GSD for Antigravity](https://github.com/toonight/get-shit-done-for-ant
 
 ## Who This Is For
 
-| User Type | Scenario | How Pi Harness Helps |
+| User Type | Scenario | How Gravity for Antigravity Helps |
 |---|---|---|
 | **Solo Developers** | Building complex full-stack features with AI assistance | Offloads bulk file reads, testing, and debugging to disposable subagents so the parent session remains clean and responsive across days of work. |
 | **Power Prompt Engineers** | Designing autonomous, multi-step workflows | Provides strict role contracts, tool grants, model pinning, and structured `send_message` result handoffs. |
@@ -70,21 +70,21 @@ Based on [GSD for Antigravity](https://github.com/toonight/get-shit-done-for-ant
 
 ```bash
 cd your-project
-git clone https://github.com/earendil-works/pi.git pi-harness
-cp -r pi-harness/.agents ./
-cp -r pi-harness/adapters ./
-cp -r pi-harness/docs ./
-cp -r pi-harness/scripts ./
-cp -r pi-harness/tests ./
-cp pi-harness/AGENTS.md ./
-cp pi-harness/PROJECT_RULES.md ./
-cp pi-harness/model_capabilities.yaml ./
-rm -rf pi-harness
+git clone https://github.com/H3lloLLM/Gravity-for-Antigravity.git gravity
+cp -r gravity/.agents ./
+cp -r gravity/adapters ./
+cp -r gravity/docs ./
+cp -r gravity/scripts ./
+cp -r gravity/tests ./
+cp gravity/AGENTS.md ./
+cp gravity/PROJECT_RULES.md ./
+cp gravity/model_capabilities.yaml ./
+rm -rf gravity
 
 # Install global Antigravity plugin
-mkdir -p ~/.gemini/config/plugins/pi-harness/agents ~/.gemini/config/plugins/pi-harness/skills
-cp -r .agents/agents/* ~/.gemini/config/plugins/pi-harness/agents/
-cp -r .agents/skills/* ~/.gemini/config/plugins/pi-harness/skills/
+mkdir -p ~/.gemini/config/plugins/gravity-for-antigravity/agents ~/.gemini/config/plugins/gravity-for-antigravity/skills
+cp -r .agents/agents/* ~/.gemini/config/plugins/gravity-for-antigravity/agents/
+cp -r .agents/skills/* ~/.gemini/config/plugins/gravity-for-antigravity/skills/
 ```
 
 </details>
@@ -94,16 +94,16 @@ cp -r .agents/skills/* ~/.gemini/config/plugins/pi-harness/skills/
 
 ```powershell
 cd your-project
-git clone https://github.com/earendil-works/pi.git pi-harness
-Copy-Item -Recurse pi-harness\.agents .\
-Copy-Item -Recurse pi-harness\adapters .\
-Copy-Item -Recurse pi-harness\docs .\
-Copy-Item -Recurse pi-harness\scripts .\
-Copy-Item -Recurse pi-harness\tests .\
-Copy-Item -Force pi-harness\AGENTS.md .\
-Copy-Item -Force pi-harness\PROJECT_RULES.md .\
-Copy-Item -Force pi-harness\model_capabilities.yaml .\
-Remove-Item -Recurse -Force pi-harness
+git clone https://github.com/H3lloLLM/Gravity-for-Antigravity.git gravity
+Copy-Item -Recurse gravity\.agents .\
+Copy-Item -Recurse gravity\adapters .\
+Copy-Item -Recurse gravity\docs .\
+Copy-Item -Recurse gravity\scripts .\
+Copy-Item -Recurse gravity\tests .\
+Copy-Item -Force gravity\AGENTS.md .\
+Copy-Item -Force gravity\PROJECT_RULES.md .\
+Copy-Item -Force gravity\model_capabilities.yaml .\
+Remove-Item -Recurse -Force gravity
 ```
 
 </details>
@@ -112,7 +112,7 @@ Remove-Item -Recurse -Force pi-harness
 
 ## How It Works
 
-Pi Harness enforces **Orchestrator-Only Discipline**. The parent Antigravity agent never attempts direct implementation or bulk code scanning; it delegates each task to a specialist subagent, which works inside an isolated context window and reports back via a structured summary envelope.
+Gravity for Antigravity enforces **Orchestrator-Only Discipline**. The parent Antigravity agent never attempts direct implementation or bulk code scanning; it delegates each task to a specialist subagent, which works inside an isolated context window and reports back via a structured summary envelope.
 
 ```mermaid
 graph LR
@@ -174,7 +174,7 @@ Instead of general-purpose prompts, each Pi subagent is locked to a specific cog
 Every subagent runs in its own isolated context window. Large file reads, extensive grep matches, compiler logs, and trace dumps live only in disposable subagent memory. The parent agent receives only compact summaries and file paths.
 
 ### 4. Headless CLI Fan-Out (`subagent.sh` + `parallel_subagents.py`)
-In addition to native Antigravity IDE delegation, Pi Harness provides high-performance headless execution:
+In addition to native Antigravity IDE delegation, Gravity for Antigravity provides high-performance headless execution:
 - `subagent.sh`: Spawns one-shot non-interactive instances with explicit model pinning, task files, structured JSON envelope extraction, and automated timeout enforcement (`--print-timeout 20m`).
 - `parallel_subagents.py`: Dispatches multiple subagent tasks concurrently across worker pools with isolated workspace run directories (`.gsd/runs/<timestamp>/<task_id>/`).
 
@@ -234,7 +234,7 @@ Subagent roles are dynamically bound to the most efficient model tiers. Routine 
 
 ## Cross-Platform Support
 
-Pi Harness is built from the ground up for full cross-platform compatibility across **macOS (Darwin)**, **Linux**, and **Windows (PowerShell 5.1 / 7+)**:
+Gravity for Antigravity is built from the ground up for full cross-platform compatibility across **macOS (Darwin)**, **Linux**, and **Windows (PowerShell 5.1 / 7+)**:
 - **Shell Discipline:** Commands in orchestration workflows are executed individually without chaining operators (`&&` or `||`), preventing shell parsing crashes on Windows.
 - **Dual Tooling:** All operational scripts provide native bash (`.sh`) and PowerShell (`.ps1`) implementations.
 - **Safe Pathing:** All internal path normalization supports POSIX and Windows backslash paths seamlessly.
@@ -244,7 +244,7 @@ Pi Harness is built from the ground up for full cross-platform compatibility acr
 ## File Structure
 
 ```
-pi-harness/
+gravity-for-antigravity/
 ├── 📄 AGENTS.md                      # ← Orchestrator-only discipline rule (START HERE)
 ├── 📄 PROJECT_RULES.md               # Canonical GSD & Pi rules
 ├── 📄 model_capabilities.yaml        # Model routing registry & tier mappings
@@ -346,8 +346,8 @@ bash tests/test_agent_validation.sh
 
 <div align="center">
 
-Built with ❤️ by the **Pi Harness Contributors** • Powered by [Google Antigravity](https://github.com/earendil-works/pi) and [GSD](https://github.com/toonight/get-shit-done-for-antigravity)
+Built with ❤️ by the **Gravity for Antigravity Contributors** • Powered by [Google Antigravity](https://github.com/H3lloLLM/Gravity-for-Antigravity) and [GSD](https://github.com/toonight/get-shit-done-for-antigravity)
 
-[![GitHub](https://img.shields.io/badge/GitHub-earendil--works%2Fpi-181717?style=flat-square&logo=github)](https://github.com/earendil-works/pi)
+[![GitHub](https://img.shields.io/badge/GitHub-H3lloLLM-181717?style=flat-square&logo=github)](https://github.com/H3lloLLM/Gravity-for-Antigravity)
 
 </div>
