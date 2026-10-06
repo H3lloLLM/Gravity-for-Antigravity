@@ -65,6 +65,9 @@ Based on [GSD for Antigravity](https://github.com/toonight/get-shit-done-for-ant
 
 ### Installation
 
+> [!TIP]
+> The installation copies `AGENTS.md` both locally to your workspace and globally to `~/.gemini/config/AGENTS.md` and the plugin rules folder, ensuring strict orchestrator-only discipline is active in every session.
+
 <details open>
 <summary><b>Bash (Linux / macOS)</b></summary>
 
@@ -81,10 +84,12 @@ cp gravity/PROJECT_RULES.md ./
 cp gravity/model_capabilities.yaml ./
 rm -rf gravity
 
-# Install global Antigravity plugin
-mkdir -p ~/.gemini/config/plugins/gravity-for-antigravity/agents ~/.gemini/config/plugins/gravity-for-antigravity/skills
+# Install global Antigravity plugin & rules
+mkdir -p ~/.gemini/config/plugins/gravity-for-antigravity/agents ~/.gemini/config/plugins/gravity-for-antigravity/skills ~/.gemini/config/plugins/gravity-for-antigravity/rules
 cp -r .agents/agents/* ~/.gemini/config/plugins/gravity-for-antigravity/agents/
 cp -r .agents/skills/* ~/.gemini/config/plugins/gravity-for-antigravity/skills/
+cp AGENTS.md ~/.gemini/config/plugins/gravity-for-antigravity/rules/
+cp AGENTS.md ~/.gemini/config/AGENTS.md
 ```
 
 </details>
@@ -104,6 +109,15 @@ Copy-Item -Force gravity\AGENTS.md .\
 Copy-Item -Force gravity\PROJECT_RULES.md .\
 Copy-Item -Force gravity\model_capabilities.yaml .\
 Remove-Item -Recurse -Force gravity
+
+# Install global Antigravity plugin & rules
+New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins\gravity-for-antigravity\agents"
+New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins\gravity-for-antigravity\skills"
+New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins\gravity-for-antigravity\rules"
+Copy-Item -Recurse -Force .agents\agents\* "$HOME\.gemini\config\plugins\gravity-for-antigravity\agents\"
+Copy-Item -Recurse -Force .agents\skills\* "$HOME\.gemini\config\plugins\gravity-for-antigravity\skills\"
+Copy-Item -Force AGENTS.md "$HOME\.gemini\config\plugins\gravity-for-antigravity\rules\"
+Copy-Item -Force AGENTS.md "$HOME\.gemini\config\AGENTS.md"
 ```
 
 </details>
