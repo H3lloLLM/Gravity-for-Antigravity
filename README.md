@@ -6,13 +6,13 @@
 
 [![Version](https://img.shields.io/badge/version-v1.0.0-00C853?style=flat-square)](https://github.com/H3lloLLM/Gravity-for-Antigravity)
 [![License](https://img.shields.io/badge/license-MIT-2196F3?style=flat-square)](LICENSE)
-[![Based on GSD](https://img.shields.io/badge/based%20on-GSD-7B2D8E?style=flat-square)](https://github.com/toonight/get-shit-done-for-antigravity)
+[![Harness](https://img.shields.io/badge/harness-Pi-7B2D8E?style=flat-square)](https://github.com/earendil-works/pi)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20Mac-FF6D00?style=flat-square)](#cross-platform-support)
 [![Requires](https://img.shields.io/badge/requires-Antigravity%202.0%2B-E91E63?style=flat-square)](#)
 
 A plugin-based multi-agent orchestration system for Google Antigravity that routes every task to the right specialist subagent (Pi subagents), keeping the main AI context lean, fast, and razor-sharp.
 
-Based on [GSD for Antigravity](https://github.com/toonight/get-shit-done-for-antigravity) • Upstream reference: [Pi by earendil-works](https://github.com/H3lloLLM/Gravity-for-Antigravity)
+Inspired by [Pi](https://github.com/earendil-works/pi) for Google Antigravity
 
 [Quick Start](#getting-started) • [How It Works](#how-it-works) • [Pi Subagents](#pi-subagents-catalog) • [Why It Works](#why-it-works) • [Documentation](#documentation) • [Philosophy](#philosophy)
 
@@ -190,7 +190,7 @@ Every subagent runs in its own isolated context window. Large file reads, extens
 ### 4. Headless CLI Fan-Out (`subagent.sh` + `parallel_subagents.py`)
 In addition to native Antigravity IDE delegation, Gravity for Antigravity provides high-performance headless execution:
 - `subagent.sh`: Spawns one-shot non-interactive instances with explicit model pinning, task files, structured JSON envelope extraction, and automated timeout enforcement (`--print-timeout 20m`).
-- `parallel_subagents.py`: Dispatches multiple subagent tasks concurrently across worker pools with isolated workspace run directories (`.gsd/runs/<timestamp>/<task_id>/`).
+- `parallel_subagents.py`: Dispatches multiple subagent tasks concurrently across worker pools with isolated workspace run directories (`.runs/<timestamp>/<task_id>/`).
 
 ### 5. Model Routing Registry (`model_capabilities.yaml`)
 Subagent roles are dynamically bound to the most efficient model tiers. Routine file scouting and code building run on ultra-fast, low-latency models (`gemini-3.8-flash-low`), while complex dependency analysis and step planning leverage reasoning tiers (`gemini-3.8-flash-high`).
@@ -260,11 +260,11 @@ Gravity for Antigravity is built from the ground up for full cross-platform comp
 ```
 gravity-for-antigravity/
 ├── 📄 AGENTS.md                      # ← Orchestrator-only discipline rule (START HERE)
-├── 📄 PROJECT_RULES.md               # Canonical GSD & Pi rules
+├── 📄 PROJECT_RULES.md               # Canonical multi-agent & Pi rules
 ├── 📄 model_capabilities.yaml        # Model routing registry & tier mappings
 ├── 📄 GSD-STYLE.md                   # Meta-prompting conventions & XML guidelines
 ├── 📂 .agents/
-│   ├── 📂 agents/                    # Subagent definitions (6 Pi + 5 GSD)
+│   ├── 📂 agents/                    # Subagent definitions (6 Pi specialist agents)
 │   │   ├── 📄 pi-scout.md            # Reconnaissance subagent specification
 │   │   ├── 📄 pi-scout.yaml          # Model sidecar (gemini-3.8-flash-low)
 │   │   ├── 📄 pi-planner.md          # Architecture & planning subagent
@@ -277,7 +277,7 @@ gravity-for-antigravity/
 │   │   ├── 📄 pi-debugger.yaml       # Model sidecar (gemini-3.8-flash-medium)
 │   │   ├── 📄 pi-investigator.md     # Web research subagent
 │   │   ├── 📄 pi-investigator.yaml   # Model sidecar (gemini-3.8-flash-medium)
-│   │   └── ...                       # GSD subagents (executor, verifier, etc.)
+│   │   └── ...                       # Additional subagents (executor, verifier, etc.)
 │   └── 📂 skills/                    # Agent skill modules
 ├── 📂 adapters/                      # Model-specific enhancements (CLAUDE, GEMINI, GPT_OSS)
 ├── 📂 docs/
@@ -360,7 +360,9 @@ bash tests/test_agent_validation.sh
 
 <div align="center">
 
-Built with ❤️ by the **Gravity for Antigravity Contributors** • Powered by [Google Antigravity](https://github.com/H3lloLLM/Gravity-for-Antigravity) and [GSD](https://github.com/toonight/get-shit-done-for-antigravity)
+Built with ❤️ by the **Gravity for Antigravity Contributors** • Powered by [Google Antigravity](https://github.com/H3lloLLM/Gravity-for-Antigravity)
+
+<sub>Inspired by <a href="https://github.com/earendil-works/pi">Pi</a> for Google Antigravity</sub>
 
 [![GitHub](https://img.shields.io/badge/GitHub-H3lloLLM-181717?style=flat-square&logo=github)](https://github.com/H3lloLLM/Gravity-for-Antigravity)
 
