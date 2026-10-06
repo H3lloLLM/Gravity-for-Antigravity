@@ -66,7 +66,7 @@ Based on [GSD for Antigravity](https://github.com/toonight/get-shit-done-for-ant
 ### Installation
 
 > [!TIP]
-> The installation copies `AGENTS.md` both locally to your workspace and globally to `~/.gemini/config/AGENTS.md` and the plugin rules folder, ensuring strict orchestrator-only discipline is active in every session.
+> **Global Orchestration**: Following these steps installs the strict orchestrator-only discipline globally across all Antigravity sessions and workspaces.
 
 <details open>
 <summary><b>Bash (Linux / macOS)</b></summary>
