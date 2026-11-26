@@ -42,7 +42,7 @@ Inspired by [Pi](https://github.com/earendil-works/pi) for Google Antigravity
 - **Context Hygiene:** Subagents absorb token weight in disposable, isolated execution environments. Parent context stays under 15%.
 - **Role Specialization:** 6 dedicated Pi subagents handle reconnaissance, architecture, coding, reviewing, debugging, and web research.
 - **High-Speed Execution:** Lightweight context delivers snappy round-trips and laser-accurate diff generation.
-- **Dynamic Model Routing:** Pins tasks to optimal models via `model_capabilities.yaml` (fast Flash Low for scout/build, Flash High for planning).
+- **Dynamic Model Routing:** Pins tasks to optimal models via `model_capabilities.yaml` (fast Flash Low for scout/build, Hydrogen High for planning).
 - **Empirical Validation:** Subagents must capture command output, run tests, and undergo independent diff review before returning completion.
 
 </td>
@@ -133,7 +133,7 @@ graph LR
     User(["👤 User Request"]) --> Orch["🎯 Orchestrator<br/>(Antigravity Main)"]
     Orch --> Route{"🔀 Specialist<br/>Router"}
     Route -->|Reconnaissance| Scout["🔍 pi-scout<br/>(Flash Low)"]
-    Route -->|Architecture| Planner["📐 pi-planner<br/>(Flash High)"]
+    Route -->|Architecture| Planner["📐 pi-planner<br/>(Hydrogen High)"]
     Route -->|Code & Tests| Builder["🔨 pi-builder<br/>(Flash Low)"]
     Route -->|Audit & Diff| Reviewer["🛡️ pi-reviewer<br/>(Flash Medium)"]
     Route -->|Bug Diagnosis| Debugger["🐛 pi-debugger<br/>(Flash Medium)"]
@@ -193,7 +193,7 @@ In addition to native Antigravity IDE delegation, Gravity for Antigravity provid
 - `parallel_subagents.py`: Dispatches multiple subagent tasks concurrently across worker pools with isolated workspace run directories (`.runs/<timestamp>/<task_id>/`).
 
 ### 5. Model Routing Registry (`model_capabilities.yaml`)
-Subagent roles are dynamically bound to the most efficient model tiers. Routine file scouting and code building run on ultra-fast, low-latency models (`gemini-3.8-flash-low`), while complex dependency analysis and step planning leverage reasoning tiers (`gemini-3.8-flash-high`).
+Subagent roles are dynamically bound to the most efficient model tiers. Routine file scouting and code building run on ultra-fast, low-latency models (`gemini-3.8-flash-low`), while complex dependency analysis and step planning leverage reasoning tiers (`gemini-4-hydrogen-high`).
 
 ---
 
@@ -202,7 +202,7 @@ Subagent roles are dynamically bound to the most efficient model tiers. Routine 
 | Agent | Tier / Slug | Purpose | Tools Granted |
 |---|---|---|---|
 | 🔵 **`pi-scout`** | `gemini-3.8-flash-low` | Rapid file & codebase reconnaissance | `view_file`, `list_dir`, `find_by_name`, `grep_search`, `send_message` |
-| 🟣 **`pi-planner`** | `gemini-3.8-flash-high` | Strategic planning & dependency analysis | `view_file`, `list_dir`, `find_by_name`, `send_message` |
+| 🟣 **`pi-planner`** | `gemini-4-hydrogen-high` | Strategic planning & dependency analysis | `view_file`, `list_dir`, `find_by_name`, `send_message` |
 | 🟢 **`pi-builder`** | `gemini-3.8-flash-low` | Isolated implementation & test verification | `view_file`, `write_to_file`, `replace_file_content`, `run_command`, `send_message` |
 | 🟡 **`pi-reviewer`** | `gemini-3.8-flash-medium` | Code review, security scan, empirical proof | `view_file`, `run_command`, `send_message` |
 | 🔴 **`pi-debugger`** | `gemini-3.8-flash-medium` | Hypothesis-driven debugging & root cause | `view_file`, `run_command`, `send_message` |
@@ -268,7 +268,7 @@ gravity-for-antigravity/
 │   │   ├── 📄 pi-scout.md            # Reconnaissance subagent specification
 │   │   ├── 📄 pi-scout.yaml          # Model sidecar (gemini-3.8-flash-low)
 │   │   ├── 📄 pi-planner.md          # Architecture & planning subagent
-│   │   ├── 📄 pi-planner.yaml        # Model sidecar (gemini-3.8-flash-high)
+│   │   ├── 📄 pi-planner.yaml        # Model sidecar (gemini-4-hydrogen-high)
 │   │   ├── 📄 pi-builder.md          # Implementation & test subagent
 │   │   ├── 📄 pi-builder.yaml        # Model sidecar (gemini-3.8-flash-low)
 │   │   ├── 📄 pi-reviewer.md         # Code review & validation subagent

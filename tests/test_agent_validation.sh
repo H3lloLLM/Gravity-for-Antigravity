@@ -11,7 +11,7 @@ echo "Agent validation passed."
 echo "Verifying Pi agent YAML sidecar model slugs..."
 EXPECTED_MODELS=(
     "pi-scout:gemini-3.8-flash-low"
-    "pi-planner:gemini-3.8-flash-high"
+    "pi-planner:gemini-4-hydrogen-high"
     "pi-builder:gemini-3.8-flash-low"
     "pi-reviewer:gemini-3.8-flash-medium"
     "pi-debugger:gemini-3.8-flash-medium"

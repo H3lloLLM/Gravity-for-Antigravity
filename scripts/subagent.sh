@@ -44,7 +44,7 @@ fi
 MODEL="$MODEL_OR_ROLE"
 case "$MODEL_OR_ROLE" in
     pi-scout) MODEL="gemini-3.8-flash-low" ;;
-    pi-planner) MODEL="gemini-3.8-flash-high" ;;
+    pi-planner) MODEL="gemini-4-hydrogen-high" ;;
     pi-builder) MODEL="gemini-3.8-flash-low" ;;
     pi-reviewer) MODEL="gemini-3.8-flash-medium" ;;
     pi-debugger) MODEL="gemini-3.8-flash-medium" ;;

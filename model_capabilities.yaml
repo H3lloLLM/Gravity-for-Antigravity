@@ -110,7 +110,7 @@ phase_recommendations:
 # Pi Harness Subagent Role Mappings
 role_mappings:
   pi-scout: gemini-3.8-flash-low
-  pi-planner: gemini-3.8-flash-high
+  pi-planner: gemini-4-hydrogen-high
   pi-builder: gemini-3.8-flash-low
   pi-reviewer: gemini-3.8-flash-medium
   pi-debugger: gemini-3.8-flash-medium

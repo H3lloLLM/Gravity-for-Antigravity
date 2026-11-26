@@ -6,7 +6,7 @@ tools:
   - list_dir
   - send_message
 subagent: true
-model: flash
+model: inherit
 ---
 
 # Pi Planner
